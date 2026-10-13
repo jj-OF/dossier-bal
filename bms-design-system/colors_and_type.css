@@ -1,0 +1,170 @@
+/**
+ * Sipa BMS UI — Design Tokens
+ *
+ * Extracted from:
+ *   - src/assets/scss/global-variables.scss
+ *   - src/assets/scss/_conf.scss
+ *   - src/assets/scss/app.scss
+ *
+ * Package: @ouestfrance/sipa-bms-ui (v3.32.x)
+ * Owner:   Ouest-France · équipe BMS
+ *
+ * The library is theme-able via the `--bms-*` CSS custom properties below.
+ * It relies on `light-dark()` so consumers can flip `--bms-color-scheme` and
+ * everything re-paints. Keep that contract if you extend the system.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  /* ── color scheme toggle ─────────────────────────────────────────── */
+  --bms-color-scheme: light;
+  color-scheme: var(--bms-color-scheme);
+
+  /* ── grey ramp (neutrals) ────────────────────────────────────────── */
+  --bms-grey-140: #333333;
+  --bms-grey-100: #526476;
+  --bms-grey-75:  #7c8a97;
+  --bms-grey-50:  #a7b0b9;
+  --bms-grey-25:  #d1d6da;
+  --bms-grey-10:  #ebedef;
+
+  /* ── main (primary · soft blue) ──────────────────────────────────── */
+  --bms-main-140: #3f91d9;
+  --bms-main-100: #69a9e1;
+  --bms-main-75:  #8ebee8;
+  --bms-main-50:  #b2d2ee;
+  --bms-main-25:  #d6e7f5;
+  --bms-main-10:  #edf4f9;
+
+  /* ── main-analog (secondary · indigo) ────────────────────────────── */
+  --bms-main-analog-140: #5153ac;
+  --bms-main-analog-100: #696ce0;
+  --bms-main-analog-75:  #8e90e7;
+  --bms-main-analog-50:  #b2b4ee;
+  --bms-main-analog-25:  #d7d8f5;
+  --bms-main-analog-10:  #edeef9;
+
+  /* ── green (success) ─────────────────────────────────────────────── */
+  --bms-green-140: #27731b;
+  --bms-green-100: #57b47d;
+  --bms-green-75:  #80c69d;
+  --bms-green-50:  #a9d8bc;
+  --bms-green-25:  #d3eadc;
+  --bms-green-10:  #eff9ee;
+
+  /* ── orange (warning) ────────────────────────────────────────────── */
+  --bms-orange-140: #90550b;
+  --bms-orange-100: #f08e13;
+  --bms-orange-75:  #f3a94f;
+  --bms-orange-50:  #f6c788;
+  --bms-orange-25:  #f9e1c3;
+  --bms-orange-10:  #fbf1e5;
+
+  /* ── red (danger) ────────────────────────────────────────────────── */
+  --bms-red-140: #7c1212;
+  --bms-red-100: #dc474c;
+  --bms-red-75:  #e47478;
+  --bms-red-50:  #eca1a4;
+  --bms-red-25:  #f4cfd0;
+  --bms-red-10:  #f9eaeb;
+
+  /* ── surfaces ────────────────────────────────────────────────────── */
+  --bms-white:            light-dark(#fcfcfc, #222831);
+  --bms-background-color: light-dark(#f8fafd, #151d28);
+
+  /* Glass card fill — 50% overlay matches --bms-white in dark. */
+  --bms-card-default-glass-background: light-dark(
+    rgba(255, 255, 255, 0.5),
+    rgba(47, 51, 58, 0.5)
+  );
+
+  /* ── semantic colors ─────────────────────────────────────────────── */
+  --bms-default-color:     var(--bms-main-100);
+  --bms-information-color: var(--bms-grey-100);
+  --bms-success-color:     var(--bms-green-100);
+  --bms-warning-color:     var(--bms-orange-100);
+  --bms-danger-color:      var(--bms-red-100);
+
+  --bms-font-color: light-dark(var(--bms-grey-100), var(--bms-grey-10));
+
+  /* ── borders & radii ─────────────────────────────────────────────── */
+  --bms-border-color:        light-dark(var(--bms-grey-10), var(--bms-grey-100));
+  --bms-border-radius:        4px;
+  --bms-border-radius-large:  8px;
+  --bms-border-radius-xlarge: 16px;
+
+  /* ── elevation ───────────────────────────────────────────────────── */
+  --bms-shadow-color: light-dark(var(--bms-grey-10), var(--bms-grey-140));
+  --bms-box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  --bms-box-shadow-elevated:
+    light-dark(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55)) 0px 20px 25px -5px,
+    light-dark(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.35)) 0px 10px 10px -5px,
+    0 0 0 1px light-dark(transparent, rgba(255, 255, 255, 0.08));
+
+  /* ── disabled states ─────────────────────────────────────────────── */
+  --bms-disabled-color: var(--bms-grey-50);
+  --bms-field-disabled-background:  light-dark(var(--bms-grey-25),  var(--bms-grey-140));
+  --bms-field-disabled-border-color:light-dark(var(--bms-grey-25),  var(--bms-grey-100));
+  --bms-field-disabled-text-color:  light-dark(var(--bms-grey-100), var(--bms-grey-50));
+
+  /* ── z-index system ──────────────────────────────────────────────── */
+  --bms-z-index-below:   -10;
+  --bms-z-index-base:     0;
+  --bms-z-index-fixed:   10;
+  --bms-z-index-tooltip: 20;
+  --bms-z-index-modal:   30;
+
+  /* ── typography ──────────────────────────────────────────────────── */
+  /* Default font stack from _conf.scss is Arial/Helvetica; app.scss swaps
+     in Roboto via Google Fonts. We honor that here. */
+  --bms-font-family:       'Roboto', Arial, Helvetica, sans-serif;
+  --bms-font-family-title: var(--bms-font-family);
+  --bms-font-size:         1.6rem; /* = 16px (html font-size: 0.625em → 10px root) */
+
+  /* Transition timing used across transitions (fade, slide-left-fade) */
+  --transition-duration: 0.2s;
+}
+
+/* Root sizing contract: the library sets html font-size to 62.5% so that
+   1rem = 10px. All component px values implicitly follow this ratio. */
+html { font-size: 0.625em; }
+
+body {
+  font-family: var(--bms-font-family);
+  color: var(--bms-font-color);
+  font-size: var(--bms-font-size);
+  line-height: 1.4;
+  background-color: var(--bms-background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+}
+
+/* ── semantic type roles (straight from _conf.scss mixin `styles`) ─── */
+h1, h2, h3, h4, h5 {
+  font-family: var(--bms-font-family);
+  color: var(--bms-font-color);
+  margin: 16px 0;
+}
+h1 { font-size: 40px; font-weight: 400; line-height: 40px; }
+h2 { font-size: 28px; font-weight: 400; line-height: 24px; }
+h3 { font-size: 20px; font-weight: 600; line-height: 20px; }
+
+.information {
+  font-size: 14px;
+  color: var(--bms-grey-75);
+}
+
+a {
+  color: var(--bms-main-100);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ── utility text-align classes ──────────────────────────────────── */
+.u-text-align-start  { text-align: start; }
+.u-text-align-center { text-align: center; }
+.u-text-align-end    { text-align: end; }
